@@ -1,0 +1,28 @@
+{
+  "name": "photo-album-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "author": "Chance Embrey-Farquhar",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chance-embrey/photo-album-cli.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/chance-embrey/photo-album-cli#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
