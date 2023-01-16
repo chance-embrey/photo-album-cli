@@ -1,13 +1,24 @@
 import fetchAlbumPhotos from "./fetch-album-photos.js";
 import fetcher from "./fetcher.js";
 
+/**
+ * The main function of the script, it fetches the photos of an album and prints them to the console
+ */
 async function main() {
-  // `process.argv` is an array of arguments passed to the script, the first two are the node and the script path, so we grab the third one which is the album id
-  const albumId = process.argv[2];
-  const album = await fetchAlbumPhotos(albumId, fetcher);
-  printPhotos(album);
+  try {
+    const albumId = process.argv[2];
+    const album = await fetchAlbumPhotos(albumId, fetcher);
+    printPhotos(album);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
+/**
+ * Prints the photos of an album to the console
+ *
+ * @param {Array<{albumId: Number, id: Number, title: String, url: String, thumbnailUrl: String}>} album The album of photos to print
+ */
 function printPhotos(album) {
   album.forEach((photo) => {
     console.log(`[${photo.id}] ${photo.title}`);
